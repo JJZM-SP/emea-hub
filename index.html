@@ -162,6 +162,61 @@
     background: var(--splashtop-green);
   }
 
+
+  .card .actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+  }
+
+  .card a.open-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 18px;
+    box-sizing: border-box;
+  }
+
+  .card .copy-link-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: var(--splashtop-light-blue);
+    color: var(--splashtop-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .card .copy-link-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .card .copy-link-btn.copied {
+    background: var(--splashtop-green);
+    color: #fff;
+  }
+
+  .card .copy-link-btn.muted {
+    background: #F1F1EE;
+    color: #B9C2CA;
+    cursor: not-allowed;
+  }
+
   footer {
     max-width: 1080px;
     margin: 40px auto 0;
@@ -205,7 +260,10 @@
       <span class="status" style="color:#B98900;">Coming soon</span>
       <h3>Splashtop AEM Price Calculator</h3>
       <p>Work out Splashtop AEM pricing without the manual spreadsheet.</p>
-      <a class="open-link" href="#" style="background:#B9C2CA;">Open tool &rarr;</a>
+      <div class="actions">
+        <a class="open-link" href="#" style="background:#B9C2CA;">Open tool</a>
+        <button class="copy-link-btn muted" disabled aria-label="Copy link (not available yet)"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
+      </div>
     </div>
 
     <div class="card">
@@ -215,7 +273,10 @@
       <span class="status">Live</span>
       <h3>Meeting Prep Deck Builder</h3>
       <p>Generate a tailored prep deck ahead of reseller and partner meetings.</p>
-      <a class="open-link" href="https://claude.ai/public/artifacts/87437a05-e62d-4508-828d-5f48112770a8" target="_blank" rel="noopener">Open tool &rarr;</a>
+      <div class="actions">
+        <a class="open-link" href="https://claude.ai/public/artifacts/87437a05-e62d-4508-828d-5f48112770a8" target="_blank" rel="noopener">Open tool</a>
+        <button class="copy-link-btn" onclick="copyLink(this, 'https://claude.ai/public/artifacts/87437a05-e62d-4508-828d-5f48112770a8')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
+      </div>
     </div>
 
     <div class="card">
@@ -225,7 +286,10 @@
       <span class="status" style="color:#B98900;">Coming soon</span>
       <h3>ACP Discount Guide</h3>
       <p>Reference guide for ACP discount tiers and approval thresholds.</p>
-      <a class="open-link" href="#" style="background:#B9C2CA;">Open tool &rarr;</a>
+      <div class="actions">
+        <a class="open-link" href="#" style="background:#B9C2CA;">Open tool</a>
+        <button class="copy-link-btn muted" disabled aria-label="Copy link (not available yet)"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
+      </div>
     </div>
 
     <div class="card">
@@ -235,7 +299,10 @@
       <span class="status" style="color:#B98900;">Coming soon</span>
       <h3>Partner Portal Provisioning Guide</h3>
       <p>Step-by-step guide for provisioning new partners in the Partner Portal.</p>
-      <a class="open-link" href="#" style="background:#B9C2CA;">Open tool &rarr;</a>
+      <div class="actions">
+        <a class="open-link" href="#" style="background:#B9C2CA;">Open tool</a>
+        <button class="copy-link-btn muted" disabled aria-label="Copy link (not available yet)"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
+      </div>
     </div>
 
 
@@ -247,5 +314,43 @@
   <span class="meta">Internal use only &middot; Splashtop EMEA</span>
 </footer>
 
+
+<script>
+  function copyLink(btn, url) {
+    function showCopied() {
+      var originalHTML = btn.innerHTML;
+      btn.classList.add("copied");
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>';
+      setTimeout(function () {
+        btn.classList.remove("copied");
+        btn.innerHTML = originalHTML;
+      }, 1500);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(showCopied).catch(function () {
+        fallbackCopy(url, showCopied);
+      });
+    } else {
+      fallbackCopy(url, showCopied);
+    }
+  }
+
+  function fallbackCopy(url, onSuccess) {
+    var textarea = document.createElement("textarea");
+    textarea.value = url;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      onSuccess();
+    } catch (err) {
+      console.error("Copy failed:", err);
+    }
+    document.body.removeChild(textarea);
+  }
+</script>
 </body>
 </html>
