@@ -236,6 +236,12 @@
     color: #8A97A1;
     font-weight: 300;
   }
+  .kit-list{display:flex;flex-direction:column;gap:8px;align-self:stretch;margin-top:auto;}
+  .kit-row{display:flex;align-items:center;justify-content:space-between;border:0.5px solid #E4EEF8;border-radius:8px;padding:8px 8px 8px 14px;font-size:13px;font-weight:500;}
+  .kit-btns{display:flex;gap:6px;}
+  .card .kit-btn,.card .kit-copy{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:none;padding:0;box-sizing:border-box;}
+  .card .kit-btn.dl{background:var(--splashtop-blue);color:#fff;text-decoration:none;}
+  .kit-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
 </style>
 </head>
 <body>
@@ -248,7 +254,7 @@
 <main>
   <div class="intro">
     <h1>Splashtop EMEA Hub</h1>
-    <p>A shortcut to the internal tools being built for the EMEA team. Meeting Prep Deck Builder and the ACP Discount Guide are live &mdash; the rest are coming soon.</p>
+    <p>A shortcut to the internal tools being built for the EMEA team. Meeting Prep Deck Builder, the ACP Discount Guide and the Security kits are live &mdash; the rest are coming soon.</p>
   </div>
 
   <div class="grid">
@@ -261,8 +267,8 @@
       <h3>Meeting Prep Deck Builder</h3>
       <p>Generate a tailored prep deck ahead of reseller and partner meetings.</p>
       <div class="actions">
-        <a class="open-link" href="https://claude.ai/public/artifacts/363576fd-c2b0-4fd8-b40d-733096d8fb2e" target="_blank" rel="noopener">Open tool</a>
-        <button class="copy-link-btn" onclick="copyLink(this, 'https://claude.ai/public/artifacts/363576fd-c2b0-4fd8-b40d-733096d8fb2e')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
+        <a class="open-link" href="https://claude.ai/public/artifacts/4ce8c131-5ae0-41b0-aedc-9e9450cf4a02" target="_blank" rel="noopener">Open tool</a>
+        <button class="copy-link-btn" onclick="copyLink(this, 'https://claude.ai/public/artifacts/4ce8c131-5ae0-41b0-aedc-9e9450cf4a02')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
       </div>
     </div>
 
@@ -276,6 +282,19 @@
       <div class="actions">
         <a class="open-link" href="https://splashtop-my.sharepoint.com/personal/juan_jose_zarate_splashtop_com/_layouts/15/embed.aspx?UniqueId=4ad7c542-3773-440e-a163-b13488e485b7" target="_blank" rel="noopener">Open tool</a>
         <button class="copy-link-btn" onclick="copyLink(this, 'https://splashtop-my.sharepoint.com/personal/juan_jose_zarate_splashtop_com/_layouts/15/embed.aspx?UniqueId=4ad7c542-3773-440e-a163-b13488e485b7')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
+      </div>
+      <span class="status">Live</span>
+      <h3>Security kits</h3>
+      <p>Security overview and compliance documentation for reseller and partner conversations.</p>
+      <div class="kit-list">
+        <div class="kit-row"><span>Enterprise</span><div class="kit-btns"><a class="kit-btn dl" href="https://splashtop-my.sharepoint.com/:b:/p/juan_jose_zarate/IQACpYZ3sMVpSJvta9t7uhH0AWmKK-HyAwK5PLBgx3i4hMQ?e=Yvzfe9" target="_blank" rel="noopener" aria-label="Download Enterprise security kit"><svg viewBox="0 0 24 24"><path d="M12 4v11"></path><path d="M7 11l5 5 5-5"></path><path d="M5 20h14"></path></svg></a><button class="copy-link-btn kit-copy" onclick="copyLink(this, 'https://splashtop-my.sharepoint.com/:b:/p/juan_jose_zarate/IQACpYZ3sMVpSJvta9t7uhH0AWmKK-HyAwK5PLBgx3i4hMQ?e=Yvzfe9')" aria-label="Copy Enterprise link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button></div></div>
+        <div class="kit-row"><span>On-prem</span><div class="kit-btns"><a class="kit-btn dl" href="https://splashtop-my.sharepoint.com/:b:/p/juan_jose_zarate/IQAVZ-ZlZf5JSKtPmse32RsHAXceCe4sdd-wtpqjeNz3rWo?e=BNdEQy" target="_blank" rel="noopener" aria-label="Download On-prem security kit"><svg viewBox="0 0 24 24"><path d="M12 4v11"></path><path d="M7 11l5 5 5-5"></path><path d="M5 20h14"></path></svg></a><button class="copy-link-btn kit-copy" onclick="copyLink(this, 'https://splashtop-my.sharepoint.com/:b:/p/juan_jose_zarate/IQAVZ-ZlZf5JSKtPmse32RsHAXceCe4sdd-wtpqjeNz3rWo?e=BNdEQy')" aria-label="Copy On-prem link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg></button></div></div>
       </div>
     </div>
 
